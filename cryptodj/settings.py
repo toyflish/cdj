@@ -75,10 +75,22 @@ WSGI_APPLICATION = 'cryptodj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # If you are using Cloud SQL for MySQL rather than PostgreSQL, set
+        # 'ENGINE': 'django.db.backends.mysql' instead of the following.
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASS'),
+        # For MySQL, set 'PORT': '3306' instead of the following. Any Cloud
+        # SQL Proxy instances running locally must also be set to tcp:3306.
+        'PORT': '8806',
     }
 }
+DATABASES['default']['HOST'] = os.getenv('DB_DEFAULT_HOST')
+if os.getenv('GAE_INSTANCE'):
+    pass
+else:
+    DATABASES['default']['HOST'] = '127.0.0.1'
 
 
 # Password validation
