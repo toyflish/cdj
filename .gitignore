@@ -2,6 +2,6 @@ env/
 app.yaml
 scripts
 cryptosci-fe02d7326a08.json
-cryptodj/__pycache__
+cryptodj/__pycache__/
 
 
