@@ -87,7 +87,7 @@ DATABASES = {
         'PORT': '8806',
     }
 }
-DATABASES['default']['HOST'] = os.getenv('DB_DEFAULT_HOST')
+DATABASES['default']['HOST'] = os.getenv('DB_HOST')
 if os.getenv('GAE_INSTANCE'):
     pass
 else:
@@ -127,7 +127,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
+STATIC_URL = os.getenv('STATIC_URL')
 
-STATIC_URL = '/static/'
+STATIC_ROOT = 'static/'
