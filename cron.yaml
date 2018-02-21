@@ -1,0 +1,10 @@
+cron:
+- description: "track binance BTCUSDT"
+  url: /poll/api/worker/binance?trading_pair=BTCUSDT
+  schedule: every 1 minutes
+- description: "track binance ETHUSDT"
+  url: /poll/api/worker/binance?trading_pair=ETHUSDT
+  schedule: every 1 minutes
+- description: "track binance LTCUSDT"
+  url: /poll/api/worker/binance?trading_pair=LTCUSDT
+  schedule: every 1 minutes
