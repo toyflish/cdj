@@ -1,10 +1,18 @@
 cron:
 - description: "track binance BTCUSDT"
   url: /poll/api/worker/binance?trading_pair=BTCUSDT
-  schedule: every 1 minutes
+  schedule: every 5 minutes
+  target: dj
 - description: "track binance ETHUSDT"
   url: /poll/api/worker/binance?trading_pair=ETHUSDT
-  schedule: every 1 minutes
+  schedule: every 5 minutes
+  target: dj
 - description: "track binance LTCUSDT"
   url: /poll/api/worker/binance?trading_pair=LTCUSDT
+  schedule: every 5 minutes
+  target: dj
+
+- description: "track bitcoin.de"
+  url: /task/track_btcde
   schedule: every 1 minutes
+  target: default
