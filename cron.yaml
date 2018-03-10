@@ -1,18 +1,6 @@
 cron:
-- description: "track binance BTCUSDT"
-  url: /poll/api/worker/binance?trading_pair=BTCUSDT
-  schedule: every 15 minutes from 00:01 to 23:59
-  target: dj
-- description: "track binance ETHUSDT"
-  url: /poll/api/worker/binance?trading_pair=ETHUSDT
-  schedule: every 15 minutes from 00:01 to 23:59
-  target: dj
-- description: "track binance LTCUSDT"
-  url: /poll/api/worker/binance?trading_pair=LTCUSDT
-  schedule: every 15 minutes from 00:01 to 23:59
-  target: dj
-- description: "track binance NEOUSDT"
-  url: /poll/api/worker/binance?trading_pair=NEOUSDT
+- description: "track binance pairs"
+  url: /poll/api/worker/binance?trading_pair=BTCUSDT,ETHUSDT,LTCUSDT,NEOUSDT,NANOETH,TRXETH,ADAETH,XLMETH
   schedule: every 15 minutes from 00:01 to 23:59
   target: dj
 
