@@ -4,5 +4,6 @@
     "--ignore-missing-imports",
     "--follow-imports=silent",
     "--max-line-length=120"
-  ]
+  ],
+  "python.pythonPath": "${workspaceFolder}/env/bin/python"
 }
