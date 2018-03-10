@@ -85,14 +85,13 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASS'),
         # For MySQL, set 'PORT': '3306' instead of the following. Any Cloud
         # SQL Proxy instances running locally must also be set to tcp:3306.
-        'PORT': '8806',
+        'PORT': os.getenv('DB_PORT'),
     }
 }
-DATABASES['default']['HOST'] = os.getenv('DB_HOST')
 if os.getenv('GAE_INSTANCE'):
     pass
 else:
-    DATABASES['default']['HOST'] = '127.0.0.1'
+    DATABASES['default']['HOST'] = os.getenv('DB_HOST')
 
 
 # Password validation
